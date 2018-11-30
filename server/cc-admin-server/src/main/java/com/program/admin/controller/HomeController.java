@@ -20,7 +20,7 @@ import java.util.Date;
 public class HomeController {
     private static final Logger log = LoggerFactory.getLogger(HomeController.class);
 
-    @RequestMapping("/index")
+    @RequestMapping({"/index", "/"})
     public String index(Model model) {
         return "admin/index";
     }
@@ -30,10 +30,10 @@ public class HomeController {
         return "/admin/login";
     }
 
-    @RequestMapping("/error")
-    public String error() {
-        return "/admin/login";
-    }
+//    @RequestMapping("/error")
+//    public String error() {
+//        return "/admin/login";
+//    }
 
     @RequestMapping(value = "/logout")
     public String logout(HttpServletRequest request, HttpServletResponse response) {
