@@ -9,6 +9,9 @@
 
     <modules>
         <module>server/cc-admin-server</module>
+        <module>common/cc-common-utils</module>
+        <module>module/cc-user-api</module>
+        <module>module/cc-user-service</module>
     </modules>
 
     <build>
@@ -104,10 +107,18 @@
     </repositories>
 
     <properties>
+        <prod.project.version>1.0.0-SNAPSHOT</prod.project.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <java.version>1.8</java.version>
         <commons-logging.version>1.1.1</commons-logging.version>
         <xmemcached.version>2.3.1</xmemcached.version>
         <org.springframework.version>4.3.2.RELEASE</org.springframework.version>
         <slf4j-log4j12.version>1.7.9</slf4j-log4j12.version>
+        <mybatis.version>3.2.7</mybatis.version>
+        <mybatis-spring.version>1.2.2</mybatis-spring.version>
+        <poi.version>3.10-FINAL</poi.version>
+        <spring.boot.version>1.5.9.RELEASE</spring.boot.version>
+        <log.version>1.7.2</log.version>
     </properties>
 </project>

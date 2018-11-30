@@ -19,16 +19,16 @@ layui.define(['jquery'], function (exports) {
          * @param str
          * @returns {string}
          */
-        stringEncode:function (str){
-            var div=document.createElement('div');
-            if(div.innerText){
-                div.innerText=str;
-            }else{
-                div.textContent=str;//Support firefox
+        stringEncode: function (str) {
+            var div = document.createElement('div');
+            if (div.innerText) {
+                div.innerText = str;
+            } else {
+                div.textContent = str;//Support firefox
             }
             return div.innerHTML;
-            }
-        };
+        }
+    };
 
     exports('tool', tool);
 });  

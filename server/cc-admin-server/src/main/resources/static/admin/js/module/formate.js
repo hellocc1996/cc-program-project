@@ -1,4 +1,4 @@
-layui.define(function(exports){
+layui.define(function (exports) {
     var formate = {
         /**
          * 获取当前的日期函数
@@ -7,34 +7,34 @@ layui.define(function(exports){
          * @type String timestamp 要转换的时间戳格式 1469504554276
          * @returns {String} 日期格式: 2016-07-26 10:55:38
          */
-        ge_time_format:function(timestamp){
-            if(timestamp){
-                var date = new Date(timestamp*1000);
-            }else{
+        ge_time_format: function (timestamp) {
+            if (timestamp) {
+                var date = new Date(timestamp * 1000);
+            } else {
                 var date = new Date();
             }
             Y = date.getFullYear(),
-                m = date.getMonth()+1,
+                m = date.getMonth() + 1,
                 d = date.getDate(),
                 H = date.getHours(),
                 i = date.getMinutes(),
                 s = date.getSeconds();
-            if(m<10){
-                m = '0'+m;
+            if (m < 10) {
+                m = '0' + m;
             }
-            if(d<10){
-                d = '0'+d;
+            if (d < 10) {
+                d = '0' + d;
             }
-            if(H<10){
-                H = '0'+H;
+            if (H < 10) {
+                H = '0' + H;
             }
-            if(i<10){
-                i = '0'+i;
+            if (i < 10) {
+                i = '0' + i;
             }
-            if(s<10){
-                s = '0'+s;
+            if (s < 10) {
+                s = '0' + s;
             }
-            var t = Y+'-'+m+'-'+d+' '+H+':'+i+':'+s;
+            var t = Y + '-' + m + '-' + d + ' ' + H + ':' + i + ':' + s;
             return t;
         },
         /**
@@ -43,10 +43,10 @@ layui.define(function(exports){
          * @type String strtime 要转换的日期时间格式 2016-07-26 10:55:38
          * @return {String} 时间戳格式: 1469504554276
          */
-        get_unix_time_stamp:function (strtime) {
-            if(strtime){
+        get_unix_time_stamp: function (strtime) {
+            if (strtime) {
                 var date = new Date(strtime);
-            }else{
+            } else {
                 var date = new Date();
             }
             time1 = date.getTime();   //会精确到毫秒---长度为13位

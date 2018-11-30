@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+<head>
+    <meta content="text/html;charset=UTF-8"/>
+    <title>后台登录</title>
+    <link rel="stylesheet" type="text/css" th:href="@{static/admin/layui/css/layui.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{static/admin/css/login.css}"/>
+</head>
+<body>
+<div class="m-login-bg">
+    <div class="m-login">
+        <h3>CC后台管理系统</h3>
+        <div class="m-login-warp">
+            <form class="layui-form" th:action="@{/login}" action="/login" method="POST">
+                <div class="layui-form-item">
+                    <input type="text" name="username" required lay-verify="required" placeholder="用户名"
+                           autocomplete="off"
+                           class="layui-input">
+                </div>
+                <div class="layui-form-item">
+                    <input type="password" name="password" required lay-verify="required" placeholder="密码"
+                           autocomplete="off" class="layui-input">
+                    <div class="layui-form-mid layui-word-aux" style="display:none;">辅助文字</div>
+                </div>
+                <div class="layui-form-item">
+                    <div class="layui-inline">
+                        <input type="text" name="checkCode" id="checkCode" required lay-verify="required"
+                               placeholder="验证码"
+                               autocomplete="off" class="layui-input">
+                    </div>
+                    <div class="layui-inline">
+                        <img src="/checkCode/getCode" id="CreateCheckCode"
+                                         class="verifyImg" onclick="this.src='/checkCode/getCode?' + Math.random()">
+                    </div>
+                </div>
+                <div class="layui-form-item m-login-btn">
+                    <div class="layui-inline">
+                        <button class="layui-btn layui-btn-normal" lay-submit lay-filter="login">登录</button>
+                    </div>
+                    <div class="layui-inline">
+                        <button type="reset" class="layui-btn layui-btn-primary">取消</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <p class="copyright">Copyright 2018.11.27 by 1107235099@qq.com</p>
+    </div>
+</div>
+<script type="text/javascript" th:src="@{static/admin/js/jquery/jquery-1.11.3.min.js}" charset="utf-8"></script>
+<script type="text/javascript" th:src="@{static/admin/layui/layui.js}" charset="utf-8"></script>
+<script>
+    layui.use(['form', 'layedit', 'laydate', 'jquery'], function () {
+        var form = layui.form(),
+            layer = layui.layer,
+            $ = layui.jquery;
+
+        //自定义验证规则
+        form.verify({
+            title: function (value) {
+                if (value.length < 5) {
+                    return '标题至少得5个字符啊';
+                }
+            },
+            password: [/(.+){6,12}$/, '密码必须6到12位'],
+            checkCode: [/(.+){4}$/, '验证码必须是4位'],
+
+        });
+
+        function checkCaptcha(code) {
+            var flag = "false";
+            $.ajax({
+                type: "GET",
+                url: "/checkCode/contrastCode",
+                data: {"checkCode": code},
+                dataType: "json",
+                cache: false,
+                async: false,
+                success: function (data) {
+                    // 判断后端对比验证码后是否一致
+                    if (data.isSuccess) {
+                        flag = "true";
+                    } else {
+                        //触发生成新的验证码
+                        $("#CreateCheckCode").trigger("click");
+                        layer.msg(data.errInfo, {icon: 2, offset: 't', anim: 6, time: 2000});
+                    }
+                },
+                error: function (data) {
+                    layer.msg("登录异常", {icon: 2, offset: 't', anim: 6, time: 2000});
+                }
+            });
+            if (flag == "true") {
+                return true;
+            } else {
+                return false;
+            }
+        }
+
+        // $(function () {// 获取input输入框的光标焦点事件，点击当前输入框进入该方法
+        //     $("#checkCode").focus(function () {
+        //         $(this).removeClass("blur");
+        //
+        //     });
+        //     // 点击输入框外的其它任何地方移除焦点
+        //     $("#checkCode").blur(function () {
+        //         $(this).addClass("blur");
+        //         var code = $(this).val();
+        //         checkCaptcha(code);
+        //     });
+        // });
+
+        //监听提交
+        form.on('submit(login)', function (data) {
+            // //校验验证码
+            if (!checkCaptcha(data.field.checkCode)) {
+                return false;
+            }
+        });
+
+    });
+</script>
+</body>
+
+</html>
