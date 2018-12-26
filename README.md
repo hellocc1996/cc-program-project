@@ -1,3 +1,8 @@
+线上demo环境：
+网址：http://47.99.81.118:8081/login
+账号：tourist
+密码：tourist
+
 后台管理系统
 # cc-program-project
 
