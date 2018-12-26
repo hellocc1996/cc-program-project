@@ -1,5 +1,6 @@
 package com.program.admin.controller;
 
+import com.program.util.snowFlake.SnowFlakeUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.security.core.Authentication;
@@ -29,11 +30,6 @@ public class HomeController {
     public String login() {
         return "/admin/login";
     }
-
-//    @RequestMapping("/error")
-//    public String error() {
-//        return "/admin/login";
-//    }
 
     @RequestMapping(value = "/logout")
     public String logout(HttpServletRequest request, HttpServletResponse response) {

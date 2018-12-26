@@ -5,25 +5,6 @@ public class SnowFlakeUtil {
     private long workerId;
     private long datacenterId;
     private long sequence;
-
-    private SnowFlakeUtil(long workerId, long datacenterId, long sequence) {
-        // sanity check for workerId
-        // 机房id和机器id不能超过32，不能小于0
-        if (workerId > maxWorkerId || workerId < 0) {
-            throw new IllegalArgumentException(
-                    String.format("worker Id can't be greater than %d or less than 0", maxWorkerId));
-        }
-        if (datacenterId > maxDatacenterId || datacenterId < 0) {
-            throw new IllegalArgumentException(
-                    String.format("datacenter Id can't be greater than %d or less than 0", maxDatacenterId));
-        }
-        this.workerId = workerId;
-        this.datacenterId = datacenterId;
-        this.sequence = sequence;
-    }
-
-    private static SnowFlakeUtil snowFlake = new SnowFlakeUtil(1, 1, 1);
-
     private long twepoch = 1288834974657L;
 
     private long workerIdBits = 5L;
@@ -42,6 +23,24 @@ public class SnowFlakeUtil {
     private long sequenceMask = -1L ^ (-1L << sequenceBits);
 
     private long lastTimestamp = -1L;
+
+    private SnowFlakeUtil(long workerId, long datacenterId, long sequence) {
+        // sanity check for workerId
+        // 机房id和机器id不能超过32，不能小于0
+        if (workerId > maxWorkerId || workerId < 0) {
+            throw new IllegalArgumentException(
+                    String.format("worker Id can't be greater than %d or less than 0", maxWorkerId));
+        }
+        if (datacenterId > maxDatacenterId || datacenterId < 0) {
+            throw new IllegalArgumentException(
+                    String.format("datacenter Id can't be greater than %d or less than 0", maxDatacenterId));
+        }
+        this.workerId = workerId;
+        this.datacenterId = datacenterId;
+        this.sequence = sequence;
+    }
+
+    private static SnowFlakeUtil snowFlake = new SnowFlakeUtil(1, 1, 1);
 
     public long getWorkerId() {
         return workerId;

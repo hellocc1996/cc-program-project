@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.program</groupId>
-    <artifactId>cc-admin-server</artifactId>
+    <artifactId>cc-service-server</artifactId>
     <version>1.0.0-SNAPSHOT</version>
     <packaging>war</packaging>
 
@@ -17,7 +17,7 @@
     </parent>
 
     <properties>
-        <start-class>com.program.admin.Application</start-class>
+        <start-class>com.program.service.Application</start-class>
     </properties>
 
     <dependencies>
@@ -25,30 +25,6 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-redis</artifactId>
-        </dependency>
-
-        <!-- 添加对 spring-security 的依赖 -->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-security</artifactId>
-            <exclusions>
-                <exclusion>
-                    <artifactId>spring-boot-starter</artifactId>
-                    <groupId>org.springframework.boot</groupId>
-                </exclusion>
-            </exclusions>
-        </dependency>
-
-        <!-- 添加对 thymeleaf 的依赖 -->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-thymeleaf</artifactId>
-        </dependency>
-
-        <!-- 避免检查过于严格 -->
-        <dependency>
-            <groupId>net.sourceforge.nekohtml</groupId>
-            <artifactId>nekohtml</artifactId>
         </dependency>
 
         <!-- 添加数据库驱动 -->
@@ -114,6 +90,12 @@
         <dependency>
             <groupId>com.program</groupId>
             <artifactId>cc-common-utils</artifactId>
+            <version>${prod.project.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.program</groupId>
+            <artifactId>cc-user-service</artifactId>
             <version>${prod.project.version}</version>
         </dependency>
     </dependencies>
