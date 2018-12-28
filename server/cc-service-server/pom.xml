@@ -23,7 +23,7 @@
     <dependencies>
         <dependency>
             <groupId>com.program</groupId>
-            <artifactId>cc-user-service</artifactId>
+            <artifactId>cc-user-api</artifactId>
             <version>${prod.project.version}</version>
         </dependency>
         <dependency>

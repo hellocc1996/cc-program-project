@@ -20,7 +20,7 @@
         <module>common/cc-common-utils</module>
         <module>common/cc-server-dependency</module>
         <module>module/cc-user-api</module>
-        <module>module/cc-user-service</module>
+        <!--<module>module/cc-user-service</module>-->
         <module>server/cc-admin-server</module>
         <module>server/cc-service-server</module>
     </modules>
