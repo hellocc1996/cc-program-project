@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.program.admin.dao.PermissionDao">
-    <select id="findAll" resultType="com.program.admin.domain.Permission">
+<mapper namespace="com.program.service.dao.PermissionDao">
+    <select id="findAll" resultType="com.program.user.entity.Permission">
 
         -- SELECT * from Sys_permission ;
     </select>
 
-    <select id="findByAdminUserId" parameterType="int" resultType="com.program.admin.domain.Permission">
+    <select id="findByAdminUserId" parameterType="int" resultType="com.program.user.entity.Permission">
         -- select p.*
         -- from Sys_User u
         -- LEFT JOIN sys_role_user sru on u.id= sru.Sys_User_id

@@ -1,6 +1,6 @@
-package com.program.admin.dao;
+package com.program.service.dao;
 
-import com.program.admin.domain.CcAdminUsers;
+import com.program.user.entity.CcAdminUsers;
 import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Repository;
 

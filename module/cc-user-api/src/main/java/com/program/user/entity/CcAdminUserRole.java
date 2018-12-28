@@ -1,7 +1,9 @@
-package com.program.admin.domain;
+package com.program.user.entity;
 
 
-public class CcAdminUserRole {
+import java.io.Serializable;
+
+public class CcAdminUserRole implements Serializable {
 
     private long id;
     private long userId;

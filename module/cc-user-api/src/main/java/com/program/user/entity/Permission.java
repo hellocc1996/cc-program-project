@@ -1,9 +1,11 @@
-package com.program.admin.domain;
+package com.program.user.entity;
+
+import java.io.Serializable;
 
 /**
  * Created by cuipp22399 on 17/1/20.
  */
-public class Permission {
+public class Permission implements Serializable {
 
     private int id;
     //权限名称

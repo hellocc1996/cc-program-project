@@ -26,14 +26,10 @@ import org.springframework.security.web.access.intercept.FilterSecurityIntercept
 @Configuration
 @EnableWebSecurity
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
-
-    //    @Autowired
-//    private MyFilterSecurityInterceptor myFilterSecurityInterceptor;
     @Autowired
     UserDetailsService customUserService;
 
     private Logger logger = LoggerFactory.getLogger(getClass());
-
 
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {

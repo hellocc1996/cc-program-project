@@ -1,10 +1,7 @@
 package com.program.admin.controller;
 
 import com.alibaba.dubbo.config.annotation.Reference;
-import com.program.user.entity.UserEntity;
-import com.program.user.req.LoginReq;
 import com.program.user.service.UserService;
-import com.program.util.snowFlake.SnowFlakeUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.security.core.Authentication;

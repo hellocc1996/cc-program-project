@@ -1,10 +1,11 @@
-package com.program.admin.domain;
+package com.program.user.entity;
 
 
+import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 
-public class CcAdminUsers {
+public class CcAdminUsers implements Serializable {
 
     private long id;
     private String account;

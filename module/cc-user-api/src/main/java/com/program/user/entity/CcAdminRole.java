@@ -1,9 +1,10 @@
-package com.program.admin.domain;
+package com.program.user.entity;
 
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class CcAdminRole {
+public class CcAdminRole implements Serializable {
 
     private long id;
     private String code;

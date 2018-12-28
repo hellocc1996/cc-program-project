@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.program.admin.dao.CcAdminUsersDao">
-    <resultMap id="ccAdminUsersMap" type="com.program.admin.domain.CcAdminUsers">
+<mapper namespace="com.program.service.dao.CcAdminUsersDao">
+    <resultMap id="ccAdminUsersMap" type="com.program.user.entity.CcAdminUsers">
         <id property="id" column="ID"/>
         <result property="account" column="ACCOUNT"/>
         <result property="password" column="PASSWORD"/>
@@ -16,7 +16,7 @@
         <result property="lastLoginFailTime" column="LAST_LOGIN_FAIL_TIME"/>
         <result property="gmtCreate" column="GMT_CREATE"/>
         <result property="gmtModify" column="GMT_MODIFY"/>
-        <collection property="roles" ofType="com.program.admin.domain.CcAdminRole">
+        <collection property="roles" ofType="com.program.user.entity.CcAdminRole">
             <result column="ID" property="id"/>
             <result column="CODE" property="code"/>
             <result column="DISPLAY_NAME" property="displayName"/>
