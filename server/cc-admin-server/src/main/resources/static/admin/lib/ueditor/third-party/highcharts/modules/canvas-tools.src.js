@@ -1113,7 +1113,7 @@ if (!Array.prototype.indexOf) {
                 else if (this.style('fill').hasValue()) {
                     var fillStyle = this.style('fill');
                     if (this.style('fill-opacity').hasValue()) fillStyle = fillStyle.Color.addOpacity(this.style('fill-opacity').value);
-                    ctx.fillStyle = (fillStyle.value == 'none' ? 'rgba(0,0,0,0)' : fillStyle.value);
+                    ctx.fillStyle = (fillStyle.value == 'none' ? 'rgba(47.99.81.118)' : fillStyle.value);
                 }
 
                 // stroke
@@ -1124,7 +1124,7 @@ if (!Array.prototype.indexOf) {
                 else if (this.style('stroke').hasValue()) {
                     var strokeStyle = this.style('stroke');
                     if (this.style('stroke-opacity').hasValue()) strokeStyle = strokeStyle.Color.addOpacity(this.style('stroke-opacity').value);
-                    ctx.strokeStyle = (strokeStyle.value == 'none' ? 'rgba(0,0,0,0)' : strokeStyle.value);
+                    ctx.strokeStyle = (strokeStyle.value == 'none' ? 'rgba(47.99.81.118)' : strokeStyle.value);
                 }
                 if (this.style('stroke-width').hasValue()) ctx.lineWidth = this.style('stroke-width').Length.toPixels();
                 if (this.style('stroke-linecap').hasValue()) ctx.lineCap = this.style('stroke-linecap').value;
@@ -1219,7 +1219,7 @@ if (!Array.prototype.indexOf) {
             this.baseSetContext = this.setContext;
             this.setContext = function (ctx) {
                 // initial values
-                ctx.strokeStyle = 'rgba(0,0,0,0)';
+                ctx.strokeStyle = 'rgba(47.99.81.118)';
                 ctx.lineCap = 'butt';
                 ctx.lineJoin = 'miter';
                 ctx.miterLimit = 4;

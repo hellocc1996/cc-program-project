@@ -7,8 +7,18 @@
     <version>1.0.0-SNAPSHOT</version>
     <packaging>pom</packaging>
 
+    <dependencies>
+        <!-- guava -->
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>23.3-jre</version>
+        </dependency>
+    </dependencies>
+
     <modules>
         <module>common/cc-common-utils</module>
+        <module>common/cc-server-dependency</module>
         <module>module/cc-user-api</module>
         <module>module/cc-user-service</module>
         <module>server/cc-admin-server</module>
@@ -71,6 +81,7 @@
                 <artifactId>maven-war-plugin</artifactId>
                 <version>2.5</version>
                 <configuration>
+                    <failOnMissingWebXml>false</failOnMissingWebXml>
                     <webappDirectory>${basedir}/src/main/webapp</webappDirectory>
                     <warSourceDirectory>${basedir}/src/main/webapp</warSourceDirectory>
                 </configuration>
@@ -88,6 +99,31 @@
                             <directory>${basedir}/src/main/webapp/WEB-INF/classes</directory>
                         </fileset>
                     </filesets>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-install-plugin</artifactId>
+                <version>2.4</version>
+                <configuration>
+                    <skip>true</skip>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <!--fork :  如果没有该项配置，这个devtools不会起作用，即应用不会restart -->
+                    <fork>true</fork>
+                    <!--支持静态文件热部署-->
+                    <addResources>true</addResources>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <fork>true</fork>
                 </configuration>
             </plugin>
         </plugins>
@@ -123,5 +159,6 @@
         <log.version>1.7.2</log.version>
         <dubbo.version>1.0.0</dubbo.version>
         <zookeeper.version>3.4.8</zookeeper.version>
+        <nekohtml.version>1.9.21</nekohtml.version>
     </properties>
 </project>

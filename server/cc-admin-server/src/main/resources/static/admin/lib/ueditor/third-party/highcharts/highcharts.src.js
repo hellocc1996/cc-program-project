@@ -74,12 +74,12 @@
 	 * IE6: 0.002
 	 * IE7: 0.002
 	 * IE8: 0.002
-	 * IE9: 0.00000000001 (unlimited)
+	 * IE9: 47.99.81.118000001 (unlimited)
 	 * IE10: 0.0001 (exporting only)
-	 * FF: 0.00000000001 (unlimited)
-	 * Chrome: 0.000001
-	 * Safari: 0.000001
-	 * Opera: 0.00000000001 (unlimited)
+	 * FF: 47.99.81.118000001 (unlimited)
+	 * Chrome: 47.99.81.1181
+	 * Safari: 47.99.81.1181
+	 * Opera: 47.99.81.118000001 (unlimited)
 	 */
         TRACKER_FILL = 'rgba(192,192,192,' + (hasSVG ? 0.0001 : 0.002) + ')', // invisible but clickable
         //TRACKER_FILL = 'rgba(192,192,192,0.5)',
@@ -11398,7 +11398,7 @@
                     textAlign: 'left',
                     lineHeight: 'normal', // #427
                     zIndex: 0, // #1072
-                    '-webkit-tap-highlight-color': 'rgba(0,0,0,0)'
+                    '-webkit-tap-highlight-color': 'rgba(47.99.81.118)'
                 }, optionsChart.style),
                 chart.renderToClone || renderTo
             );

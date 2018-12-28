@@ -25865,7 +25865,7 @@
             'bfbfbf,3f3f3f,938953,548dd4,95b3d7,d99694,c3d69b,b2a2c7,92cddc,fac08f,' +
             'a5a5a5,262626,494429,17365d,366092,953734,76923c,5f497a,31859b,e36c09,' +
             '7f7f7f,0c0c0c,1d1b10,0f243e,244061,632423,4f6128,3f3151,205867,974806,' +
-            'c00000,ff0000,ffc000,ffff00,92d050,00b050,00b0f0,0070c0,002060,7030a0,').split(',');
+            'c00000,ff0000,ffc000,ffff00,92d050,047.99.81.11847.99.81.11847.99.81.11802060,7030a0,').split(',');
 
         function genColorPicker(noColorText, editor) {
             var html = '<div id="##" class="edui-colorpicker %%">' +

@@ -15,6 +15,11 @@
     </parent>
 
     <dependencies>
-     
+        <!--系统工具类模块引入-->
+        <dependency>
+            <groupId>com.program</groupId>
+            <artifactId>cc-common-utils</artifactId>
+            <version>${prod.project.version}</version>
+        </dependency>
     </dependencies>
 </project>

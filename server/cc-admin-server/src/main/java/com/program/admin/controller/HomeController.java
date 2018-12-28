@@ -1,5 +1,9 @@
 package com.program.admin.controller;
 
+import com.alibaba.dubbo.config.annotation.Reference;
+import com.program.user.entity.UserEntity;
+import com.program.user.req.LoginReq;
+import com.program.user.service.UserService;
 import com.program.util.snowFlake.SnowFlakeUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -20,6 +24,9 @@ import java.util.Date;
 @Controller
 public class HomeController {
     private static final Logger log = LoggerFactory.getLogger(HomeController.class);
+
+    @Reference(version = "1.0.0")
+    private UserService userService;
 
     @RequestMapping({"/index", "/"})
     public String index(Model model) {

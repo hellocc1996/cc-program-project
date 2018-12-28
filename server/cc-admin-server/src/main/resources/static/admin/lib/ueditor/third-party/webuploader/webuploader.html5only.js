@@ -4927,7 +4927,7 @@
                 return;
             }
 
-            // Retrieve the directory offset bytes, usually 0x00000008 or 8 decimal:
+            // Retrieve the directory offset bytes, usually 47.99.81.118008 or 8 decimal:
             dirOffset = dataView.getUint32(tiffOffset + 4, littleEndian);
             // Create the exif object to store the tags:
             data.exif = new EXIF.ExifMap();
