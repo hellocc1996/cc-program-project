@@ -19,3 +19,6 @@ lib/
 .mvn
 mvnw*
 
+###配置文件脱敏 ###
+application-dev.properties
+
